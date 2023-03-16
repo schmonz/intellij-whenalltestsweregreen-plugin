@@ -1,4 +1,4 @@
-package com.github.schmonz.intellijlatestgreentestsplugin
+package com.schmonz.intellij.latestgreentests
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

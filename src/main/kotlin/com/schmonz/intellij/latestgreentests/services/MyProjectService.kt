@@ -1,9 +1,9 @@
-package com.github.schmonz.intellijlatestgreentestsplugin.services
+package com.schmonz.intellij.latestgreentests.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.schmonz.intellijlatestgreentestsplugin.MyBundle
+import com.schmonz.intellij.latestgreentests.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

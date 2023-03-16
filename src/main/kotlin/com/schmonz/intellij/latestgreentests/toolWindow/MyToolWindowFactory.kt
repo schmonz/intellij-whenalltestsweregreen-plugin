@@ -1,4 +1,4 @@
-package com.github.schmonz.intellijlatestgreentestsplugin.toolWindow
+package com.schmonz.intellij.latestgreentests.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.schmonz.intellijlatestgreentestsplugin.MyBundle
-import com.github.schmonz.intellijlatestgreentestsplugin.services.MyProjectService
+import com.schmonz.intellij.latestgreentests.MyBundle
+import com.schmonz.intellij.latestgreentests.services.MyProjectService
 import javax.swing.JButton
 
 
