@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# intellij-latestgreentests-plugin Changelog
+# intellij-whenalltestsweregreen-plugin Changelog
 
 ## [Unreleased]
 ### Added

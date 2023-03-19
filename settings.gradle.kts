@@ -1,1 +1,1 @@
-rootProject.name = "intellij-latestgreentests-plugin"
+rootProject.name = "intellij-whenalltestsweregreen-plugin"

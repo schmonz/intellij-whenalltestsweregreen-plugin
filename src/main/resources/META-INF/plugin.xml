@@ -1,18 +1,27 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.schmonz.intellij.latestgreentests</id>
-    <name>intellij-latestgreentests-plugin Template</name>
-    <vendor>schmonz</vendor>
+    <id>com.schmonz.intellij.whenalltestsweregreen</id>
+    <name>When All Tests Were Green</name>
+    <vendor email="schmonz-web-whenalltestsweregreen@schmonz.com" url="https://github.com/schmonz/intellij-whenalltestsweregreen-plugin">Amitai Schleier</vendor>
+
+    <!-- needs an icon -->
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.schmonz.intellij.latestgreentests.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <notificationGroup
+          id="com.schmonz.intellij.whenalltestsweregreen"
+          displayType="BALLOON"
+        />
+        <testStatusListener
+          implementation="com.schmonz.intellij.whenalltestsweregreen.listeners.TestRunEventListener"
+        />
     </extensions>
 
     <applicationListeners>
-        <listener class="com.schmonz.intellij.latestgreentests.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
+        <listener
+          class="com.schmonz.intellij.whenalltestsweregreen.listeners.TestRunEventListener"
+          topic="com.intellij.execution.testframework.TestStatusListener"
+        />
     </applicationListeners>
 </idea-plugin>
