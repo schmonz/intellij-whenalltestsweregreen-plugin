@@ -4,8 +4,10 @@ import com.intellij.execution.testframework.AbstractTestProxy
 import com.intellij.execution.testframework.TestStatusListener
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationType
+import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManager
+import com.intellij.openapi.project.rootManager
 import com.intellij.openapi.roots.CompilerProjectExtension
 import java.io.File
 import java.nio.file.attribute.FileTime
@@ -13,14 +15,20 @@ import java.time.Instant
 import kotlin.io.path.setLastModifiedTime
 
 internal class TestRunEventListener : TestStatusListener() {
-
     override fun testSuiteFinished(root: AbstractTestProxy?) =
         notifyUser("When All Tests Were Green: no project associated with those tests!")
 
     override fun testSuiteFinished(root: AbstractTestProxy?, project: Project) {
-        if (everyTestThatRanWasGreen(root)) { // && thatWasReallyAllTheTests()
+        if (everyTestThatRanWasGreen(root) && thatWasReallyAllTheTests(root, project)) {
             updateLatestGreenTestsTimestamp(project)
         }
+    }
+
+    private fun thatWasReallyAllTheTests(root: AbstractTestProxy?, project: Project): Boolean {
+        val allTestNames = root!!.allTests.map{ it.name }
+        notifyUser(allTestNames.joinToString("\n"))
+        notifyUser(ModuleManager.getInstance(project).modules[0].rootManager.sourceRoots[0].path)
+        return true
     }
 
     private fun notifyUser(message: String) {
