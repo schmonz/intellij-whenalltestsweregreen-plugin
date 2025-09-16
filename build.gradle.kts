@@ -16,7 +16,7 @@ plugins {
     // Gradle Qodana Plugin
     id("org.jetbrains.qodana") version "2025.2.1"
     // Gradle Kover Plugin
-    id("org.jetbrains.kotlinx.kover") version "0.9.1"
+    id("org.jetbrains.kotlinx.kover") version "0.9.2"
 }
 
 group = properties("pluginGroup").get()
