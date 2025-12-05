@@ -14,7 +14,7 @@ plugins {
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.5.0"
     // Gradle Qodana Plugin
-    id("org.jetbrains.qodana") version "2025.2.2"
+    id("org.jetbrains.qodana") version "2025.2.3"
     // Gradle Kover Plugin
     id("org.jetbrains.kotlinx.kover") version "0.9.3"
 }
